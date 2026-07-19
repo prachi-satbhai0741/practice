@@ -1,9 +1,11 @@
 name: First CI
 on: push
 jobs:
-  greet:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Hello from GitHub Actions!"
+      - uses: actions/setup-node@v4
+      - run: npm install
+      - run: npm test
 
