@@ -1,18 +1,18 @@
 name: CI
 on: push
-env:
-  APP_NAME: my-app
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
+    strategy:
+      matrix:
+        node: ["18", "20", "22"]
     steps:
-    - uses: actions/checkout@v4
-    - run: 'echo "Repo:   ${{ github.repository }}"'
-    - run: 'echo "Actor:  ${{ github.actor }}"'
-    - run: 'echo "Branch: ${{ github.ref_name }}"'
-    - run: 'echo "SHA:    ${{ github.sha }}"'
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --version
+
 
 
 
