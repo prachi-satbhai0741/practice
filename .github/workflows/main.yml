@@ -8,9 +8,11 @@ jobs:
     env:
       NODE_ENV: production
     steps:
-      - name: Show them
-        env:
-          GREETING: hello
-        run: echo "$APP_NAME $NODE_ENV $GREETING"
+    - uses: actions/checkout@v4
+    - run: 'echo "Repo:   ${{ github.repository }}"'
+    - run: 'echo "Actor:  ${{ github.actor }}"'
+    - run: 'echo "Branch: ${{ github.ref_name }}"'
+    - run: 'echo "SHA:    ${{ github.sha }}"'
+
 
 
