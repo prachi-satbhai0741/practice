@@ -1,7 +1,10 @@
-name: Say Hello
+# what the workflow is called
+name: CI
+# WHEN it runs
 on: push
+# WHAT it does
 jobs:
-  greet:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, Actions!"
+      - uses: actions/checkout@v4
