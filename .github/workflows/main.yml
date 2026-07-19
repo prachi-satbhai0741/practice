@@ -1,5 +1,4 @@
 name: My Pipeline
-on: push
 # or be specific:
 on:
   push:
