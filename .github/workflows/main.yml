@@ -1,10 +1,6 @@
-# what the workflow is called
-name: CI
-# WHEN it runs
+name: My Pipeline
 on: push
-# WHAT it does
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+# or be specific:
+on:
+  push:
+    branches: [ main ]
