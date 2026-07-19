@@ -6,5 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "Hello from GitHub Actions!"
+      - name: Show the commit
+      - run: echo "Commit: $GITHUB_SHA"
+      - name: List the files
+      - run: ls -la
 
 
